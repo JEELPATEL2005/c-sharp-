@@ -52,7 +52,7 @@ class Program
 
         Console.WriteLine("  Display the top three students based on CGPA.\n");
 
-      var result2 = student.OrderByDescending(student => student.CGPA).Take(3);
+      var result2 = student.where(student => student.).OrderByDescending(student => student.CGPA).Take(3);
 
         foreach (var item in result2)
         {

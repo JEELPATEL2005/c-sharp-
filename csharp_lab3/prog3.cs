@@ -49,14 +49,7 @@ namespace LINQLab
 
             };
 
-            // ==========================================================
-            // Write LINQ queries below
-            // ==========================================================
-
-            // Query 1:
-            // Display the names of all customers along with the products they have ordered.
-            // (Use Join)
-            // Execute Query Syntax Join
+           
 
             var result = from cust in customers
                          join ord in orders on cust.CustomerId equals ord.CustomerId
@@ -70,11 +63,6 @@ namespace LINQLab
 
 
 
-
-            // Query 2:
-            // Display the details of the first order whose amount is greater than ₹20,000.
-            // (Use First() or FirstOrDefault())
-            // Execute Query 2
             var expensiveOrder = orders.FirstOrDefault(o => o.OrderAmount > 20000);
 
             if (expensiveOrder != null)
@@ -87,12 +75,6 @@ namespace LINQLab
             }
 
 
-
-            // Query 3:
-            // Display all customers from Ahmedabad along with the total amount they have spent on orders.
-            // (Use Join, Where, GroupBy, and Sum)
-
-            // Execute Query 3
             var ahmedabadSpending = from cust in customers
                                     join ord in orders on cust.CustomerId equals ord.CustomerId
                                     where cust.City.Equals("Ahmedabad", StringComparison.OrdinalIgnoreCase)
@@ -110,12 +92,6 @@ namespace LINQLab
             }
 
 
-            // Query 4:
-            // Display the customer who has placed the highest-value order,
-            // along with the product name and order amount.
-            // (Use Join and OrderByDescending())
-
-            // Execute Query 4
             var highestOrderDetails = (from cust in customers
                                        join ord in orders on cust.CustomerId equals ord.CustomerId
                                        orderby ord.OrderAmount descending
